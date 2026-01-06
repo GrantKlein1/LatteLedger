@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Summarizer</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .gif-button {
+        width: 100px;
+        height: 100px;
+        padding: 5px;
+        border: none;
+        cursor: pointer;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .gif-button.playing {
+        background-size: cover;
+        background-position: center;
+      }
+
+      .gif-button span {
+        position: absolute;
+        top: 35%;             /*Change this value to center vertically*/
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: black;
+        font-size: 1rem;
+        font-weight: bold;
+        text-shadow: 0 0 10px rgb(0, 191, 255), 0 0 20px rgb(0, 191, 255), 0 0 30px rgb(0, 191, 255);
+        z-index: 1;
+    }
+
+      #coinCount {
+        background-image: url('images/Carbon_fiber.jpg');
+        background-size: cover;
+        background-clip: padding-box; 
+        padding: 5px;
+        text-align: center;
+        margin: 0;
+        color: rgb(0, 191, 255);
+        font-size: 1rem;
+    }
+      
+    </style>
+  </head>
+  <body>
+    <span>
+      <button id="checkBtn" class="gif-button">
+        <span>Summarize</span>
+      </button>
+      <div id="coinCount"></div>
+    </span>
+    <script src="popup.js"></script>
+  </body>
+</html>
