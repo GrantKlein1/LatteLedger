@@ -3,31 +3,23 @@
   "name": "LatteLedger",
   "version": "1.0",
   "description": "",
+  "icons": { "128": "images/icon.png" },
+  "background": { "service_worker": "background.js", "type": "module" },
+  "action": { "default_popup": "popup.html" },
   "options_page": "options.html",
-  "icons": {
-    "128": "images/icon.png"
-  },
-  "permissions": ["scripting", "notifications", "storage"],   
-  "host_permissions": ["https://email-summarizer-3ub6.onrender.com/analyze", "https://mail.google.com/u/0/#inbox"],
-  "action": {
-    "default_popup": "popup.html"
-  },
-  "web_accessible_resources": [
-  {
-    "resources": ["contentScript.js"],
-    "matches": ["https://mail.google.com/*"]
-  }
-],
-  "background": {
-    "service_worker": "background.js",
-    "type": "module"
-
-  },
+  "permissions": ["scripting", "notifications", "storage"],
+  "host_permissions": ["<all_urls>"],
   "content_scripts": [
     {
-      "matches": ["https://mail.google.com/*"],
+      "matches": ["<all_urls>"],
       "js": ["contentScript.js"],
       "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["contentScript.js"],
+      "matches": ["<all_urls>"]
     }
   ]
 }
