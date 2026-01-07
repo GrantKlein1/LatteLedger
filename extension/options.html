@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>LatteLedger Options</title>
+		<style>
+			:root {
+				--bg: #f5f0e6;
+				--text-primary: #3e2f1c;
+				--accent-green: #00704a;
+				--string-tan: #c49a6c;
+				--comment-gray: #8e8e8e;
+				--number-gold: #d4af37;
+				--symbol-brown: #4b3b2a;
+				--ui-foam: #e3dccb;
+				--highlight-mint: #a7d7c5;
+				--error-red: #b22222;
+				--radius: 12px;
+				--shadow: 0 8px 24px rgba(75, 59, 42, 0.15);
+			}
+
+			::selection { background: var(--highlight-mint); color: var(--text-primary); }
+
+			body {
+				margin: 0;
+				padding: 24px;
+				background: linear-gradient(180deg, var(--bg) 0%, #efe8d7 100%);
+				color: var(--text-primary);
+				font-family: "Segoe UI", Arial, sans-serif;
+			}
+
+			.container {
+				max-width: 720px;
+				margin: 0 auto;
+			}
+
+			.panel {
+				background: var(--ui-foam);
+				border-radius: var(--radius);
+				box-shadow: var(--shadow);
+				overflow: hidden;
+			}
+
+			.panel-header {
+				background: linear-gradient(180deg, var(--ui-foam), #ddd4bd);
+				padding: 16px 20px;
+				border-bottom: 1px solid rgba(75, 59, 42, 0.1);
+			}
+
+			.panel-title { font-weight: 700; }
+			.panel-subtitle { font-size: 12px; color: var(--comment-gray); }
+
+			.panel-body { padding: 16px 20px; display: grid; gap: 16px; }
+
+			.field {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				background: #f7f2e5;
+				border: 1px solid rgba(75, 59, 42, 0.15);
+				border-radius: 10px;
+				padding: 12px 14px;
+			}
+
+			.field label { font-weight: 600; color: var(--symbol-brown); }
+
+			.toggle {
+				width: 44px;
+				height: 24px;
+				background: #cfd2c9;
+				border-radius: 999px;
+				position: relative;
+				transition: background 160ms ease;
+			}
+			.toggle input { display: none; }
+			.knob {
+				position: absolute;
+				top: 2px; left: 2px;
+				width: 20px; height: 20px;
+				border-radius: 50%;
+				background: #fff;
+				box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+				transition: left 160ms ease;
+			}
+			.toggle input:checked + .knob { left: 22px; }
+			.toggle input:checked ~ .toggle { background: var(--accent-green); }
+
+			.actions { display: flex; gap: 10px; }
+			#save {
+				appearance: none;
+				border: none;
+				border-radius: 10px;
+				padding: 10px 14px;
+				background: linear-gradient(180deg, #058759, var(--accent-green));
+				color: #fff;
+				font-weight: 600;
+				cursor: pointer;
+				box-shadow: 0 6px 16px rgba(0, 112, 74, 0.25);
+			}
+			#save:hover { filter: brightness(1.03); }
+
+			/* Optional code theme preview */
+			pre, code { background: #f9f4e8; border: 1px solid rgba(75,59,42,0.12); border-radius: 8px; padding: 8px 10px; font-family: "Cascadia Code", Consolas, monospace; }
+			.token.keyword, .token.function { color: var(--accent-green); }
+			.token.string, .token.literal { color: var(--string-tan); }
+			.token.comment { color: var(--comment-gray); }
+			.token.number, .token.constant { color: var(--number-gold); }
+			.token.operator, .token.symbol { color: var(--symbol-brown); }
+			.token.error { color: var(--error-red); }
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="panel">
+				<div class="panel-header">
+					<div class="panel-title">LatteLedger Options</div>
+					<div class="panel-subtitle">Tweak settings to your taste</div>
+				</div>
+				<div class="panel-body">
+					<div class="field">
+						<label for="demoToggle">Demo setting</label>
+						<div class="toggle" aria-hidden="true">
+							<input type="checkbox" id="demoToggle" />
+							<span class="knob"></span>
+						</div>
+					</div>
+
+					<div class="actions">
+						<button id="save">Save</button>
+					</div>
+
+					<pre><code>
+<span class="token.comment">// Preview theme tokens</span>
+<span class="token.keyword">let</span> <span class="token.constant">shots</span> <span class="token.operator">=</span> <span class="token.number">2</span>;
+<span class="token.function">steam</span>(<span class="token.string">"milk"</span>);
+					</code></pre>
+				</div>
+			</div>
+		</div>
+		<script src="options.js"></script>
+	</body>
+</html>

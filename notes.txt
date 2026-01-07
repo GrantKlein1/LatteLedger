@@ -1,0 +1,11 @@
+drink sizes are rendered as drop down so different for hot drinks so check that
+
+extension popup should keep running total of # drinks ordered, total cost and total calories and total sugar
+
+getting this error in console: /menu/product/2121255/iced:1 Uncaught (in promise) Error: Access to storage is not allowed from this context.Understand this errorAI
+/menu/drinks/cold-coffee:1 Uncaught (in promise) Error: Access to storage is not allowed from this context.Understand this errorAI
+4/menu/product/2121859/iced:1 Uncaught (in promise) Error: Access to storage is not allowed from this context.Understand this errorAI
+/menu/drinks/cold-coffee:1 Uncaught (in promise) Error: Access to storage is not allowed from this context.Understand this errorAI
+/menu/drinks/hot-cho…ate-lemonade-more:1 Uncaught (in promise) Error: Access to storage is not allowed from this context.Understand this errorAI
+/menu/product/471/hot:1 Uncaught (in promise) Error: Access to storage is not allowed from this context.Understand this errorAI
+/menu/drinks/hot-cho…ate-lemonade-more:1 Uncaught (in promise) Error: Access to storage is not allowed from this context.
